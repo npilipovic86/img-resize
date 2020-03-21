@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Resize Image by Nikola</title>
+        <meta name="Image resize" content="Simple image resize" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+        <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+        <link rel="stylesheet" href="css/index.css" />
+    </head>
+
+    <body>
+        <div class="info">
+            <input type="checkbox" id="show" />
+            <label for="show" class="btn">info</label>
+
+            <div class="text" id="content">
+                <div>
+                    <p>how to use</p>
+                    <p>1. set options</p>
+                    <p>2. just drop images in marked place</p>
+                    <p>3. finished!!!</p>
+                    <br />
+                    <p>
+                        if you leave file name field empty, you will get original image name plus resolution you chose eg. imageName_300x300.jpg
+                    </p>
+                    <br />
+                    <p>when you set file name, result will be nameIChose-0.jpg</p>
+                    <p>Enjoy!</p>
+                </div>
+            </div>
+        </div>
+        <div>
+            <form method="post">
+                <!-- <input id="fileDragData" style="display: none;" /> -->
+                <div id="holder">drop images here</div>
+                <div class="width">file name: <input id="name" type="text" /></div>
+                <div class="width">
+                    resolution: <input id="width" type="number" value="800" placeholder="width" /> x
+                    <input id="height" type="number" value="550" placeholder="height" /> px
+                </div>
+                <div>quality: <input id="quality" type="number" value="70" min="10" max="100" placeholder="10-100" /> %</div>
+            </form>
+        </div>
+        <script src="js/index.js"></script>
+    </body>
+</html>
