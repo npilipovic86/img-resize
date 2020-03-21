@@ -63,7 +63,6 @@ const readFiles = (files) => {
                 canvas.width = width;
                 canvas.height = height;
                 const ctx = canvas.getContext('2d');
-                // img.width and img.height will contain the original dimensions
                 ctx.drawImage(img, 0, 0, width, height);
 
                 const image = canvas.toDataURL('image/jpeg', quality / 100).replace('image/jpeg', 'image/octet-stream');
