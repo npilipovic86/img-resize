@@ -8,7 +8,6 @@
 
         <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
         <link rel="icon" href="/favicon.ico" type="image/x-icon" />
-
         <link rel="stylesheet" href="css/index.css" />
     </head>
 
@@ -33,18 +32,17 @@
                 </div>
             </div>
         </div>
-        <div>
+        <div class="app">
             <form method="post">
                 <div id="holder">drop images here</div>
-                <div class="width">file name: <input id="name" type="text" /></div>
-                <div class="width">
+                <div class="input">file name: <input id="name" type="text" /></div>
+                <div class="input">
                     resolution: <input id="width" type="number" value="800" placeholder="width" /> x
                     <input id="height" type="number" value="550" placeholder="height" /> px
                 </div>
                 <div>quality: <input id="quality" type="number" value="70" min="10" max="100" placeholder="10-100" /> %</div>
-                <div class="width">
+                <div class="input">
                     <label for="imgType">format:</label>
-
                     <select id="imgType">
                         <option value="" selected>default</option>
                         <option value="image/jpeg">jpeg</option>
