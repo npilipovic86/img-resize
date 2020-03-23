@@ -51,6 +51,7 @@ const readFiles = (files) => {
             return;
         }
 
+        const type = files[i].type;
         const reader = new FileReader();
 
         reader.readAsDataURL(files[i]);
@@ -65,13 +66,13 @@ const readFiles = (files) => {
                 const ctx = canvas.getContext('2d');
                 ctx.drawImage(img, 0, 0, width, height);
 
-                const image = canvas.toDataURL('image/jpeg', quality / 100).replace('image/jpeg', 'image/octet-stream');
+                const image = canvas.toDataURL(type, quality / 100).replace(type, 'image/octet-stream');
 
                 const downloadLink = document.createElement('a');
                 downloadLink.href = image;
                 if (name.length > 0) {
                     // set  name
-                    downloadLink.download = name + '-' + i + '.jpg';
+                    downloadLink.download = name + '_' + i + '.' + files[i].name.split('.')[1];
                 } else {
                     // add new resolution at end of default file name
                     downloadLink.download = files[i].name.replace(/^([^.]+)$|(\.[^.]+)$/i, '$1' + '_' + width + 'x' + height + '$2');
