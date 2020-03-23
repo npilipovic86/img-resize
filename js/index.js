@@ -51,8 +51,8 @@ const readFiles = (files) => {
             alert('this is not image');
             return;
         }
-        let type = '';
 
+        let type = '';
         if (imgType) {
             type = imgType;
         } else {
