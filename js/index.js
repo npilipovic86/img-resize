@@ -35,6 +35,7 @@ const readFiles = (files) => {
     const height = document.getElementById('height').value;
     const quality = document.getElementById('quality').value;
     const name = document.getElementById('name').value;
+    const imgType = document.getElementById('imgType').value;
 
     if (!width || !height || !quality) {
         alert('please check resolution & quality');
@@ -50,8 +51,13 @@ const readFiles = (files) => {
             alert('this is not image');
             return;
         }
+        let type = '';
 
-        const type = files[i].type;
+        if (imgType) {
+            type = imgType;
+        } else {
+            type = files[i].type;
+        }
         const reader = new FileReader();
 
         reader.readAsDataURL(files[i]);
@@ -72,10 +78,10 @@ const readFiles = (files) => {
                 downloadLink.href = image;
                 if (name.length > 0) {
                     // set  name
-                    downloadLink.download = name + '_' + i + '.' + files[i].name.split('.')[1];
+                    downloadLink.download = name + '_' + i + '.' + type.split('/')[1];
                 } else {
                     // add new resolution at end of default file name
-                    downloadLink.download = files[i].name.replace(/^([^.]+)$|(\.[^.]+)$/i, '$1' + '_' + width + 'x' + height + '$2');
+                    downloadLink.download = files[i].name.split('.')[0] + '_' + width + 'x' + height + '.' + type.split('/')[1];
                 }
 
                 downloadLink.style.display = 'none';

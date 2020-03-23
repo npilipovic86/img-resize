@@ -25,12 +25,16 @@ body {
 .width {
     padding: 10px;
 }
-
-input {
+#width,
+#height {
+    width: 70px;
+}
+input,
+select {
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
-    width: 70px;
+
     padding: 10px;
     background: #2c1890;
     border-bottom: 1px solid #f8f8f8;
